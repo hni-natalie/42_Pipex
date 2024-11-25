@@ -6,7 +6,7 @@
 /*   By: hni-xuan <hni-xuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 12:23:10 by hni-xuan          #+#    #+#             */
-/*   Updated: 2024/06/08 12:23:12 by hni-xuan         ###   ########.fr       */
+/*   Updated: 2024/11/25 10:04:16 by hni-xuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@
  * @param n number of character to find
  * 
  * @return NULL if substring is not found;
- * @return a pointer to the first character of the first occurence of needle is returned  
+ * @return a pointer to the first character of the 
+ 	first occurence of needle is returned  
  */
 char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
@@ -47,8 +48,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 
 /* int main(void)
 {
-	const char	str[] = "Goo Hoo Joo Poo";
+	const char	str[] = "Goo Hoo Jio Poo";
 	const char find[] = " Joo";
-	printf("%s\n", strnstr(str, find, sizeof(str)));
+	// printf("%s\n", strnstr(str, find, sizeof(str)));
 	printf("%s", ft_strnstr(str, find, sizeof(str)));
 } */

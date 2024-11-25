@@ -6,7 +6,7 @@
 /*   By: hni-xuan <hni-xuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 16:31:08 by hni-xuan          #+#    #+#             */
-/*   Updated: 2024/06/08 16:31:10 by hni-xuan         ###   ########.fr       */
+/*   Updated: 2024/11/25 10:04:02 by hni-xuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ static char	*new_str(const char *str, size_t start, size_t len)
 	char	*ptr;
 	char	*new;
 
-	// error handling
 	if (start >= ft_strlen(str) || len <= 0 || ft_strlen(str) == 0)
 		return (ft_strdup(""));
 	ptr = (char *)malloc(len + 1);
@@ -65,11 +64,11 @@ char	*ft_strtrim(char const *s, char const *set)
 	return (new_str(s, i, j - i + 1));
 }
 
-int main(void)
+/* int main(void)
 {
 	char str[] = "abcdedaba";
 	char trim[] = "acb";
 	char *ptr = ft_strtrim(str, trim);
 	printf("%s", ptr);
 	free(ptr);
-}
+} */

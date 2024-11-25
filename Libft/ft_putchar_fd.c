@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hni-xuan <hni-xuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 13:26:21 by hni-xuan          #+#    #+#             */
-/*   Updated: 2024/06/11 13:26:22 by hni-xuan         ###   ########.fr       */
+/*   Updated: 2024/11/25 10:10:07 by hni-xuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ void	ft_putchar_fd(char c, int fd)
 	// O_WRONGLY = opened in write-only mode
 	// O_CREAT = does not exist, it will be created
 	// O_TRUNC = already exists, its content will be truncated 0 bytes
-	// 0644: Set the file permission to rw-r--r-- (read and write for the owner, and read-only for the group and others)
+	// 0644: Set the file permission to rw-r--r-- 
+	(read and write for the owner, and read-only for the group and others)
 	
 	if (fd2 == -1)
 	// if fd2 fails to open it will return -1 

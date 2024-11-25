@@ -6,7 +6,7 @@
 /*   By: hni-xuan <hni-xuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 17:23:58 by hni-xuan          #+#    #+#             */
-/*   Updated: 2024/06/09 17:24:03 by hni-xuan         ###   ########.fr       */
+/*   Updated: 2024/11/25 10:06:47 by hni-xuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ char	**ft_split(char const *s, char c)
 		s = skip_delimiter(s, c);
 		if (*s)
 		{
-			// Determine the length of the next word 
 			if (ft_strchr(s, c))
 				word_len = ft_strchr(s, c) - s;
 			else

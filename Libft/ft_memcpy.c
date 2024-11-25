@@ -6,7 +6,7 @@
 /*   By: hni-xuan <hni-xuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 17:22:09 by hni-xuan          #+#    #+#             */
-/*   Updated: 2024/06/03 17:49:33 by hni-xuan         ###   ########.fr       */
+/*   Updated: 2024/11/25 10:10:31 by hni-xuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char		*d;
 	const unsigned char	*s;
 
-	// error handling (edge cases)
 	if (dest == NULL && src == NULL)
 		return (dest);
 	d = dest;

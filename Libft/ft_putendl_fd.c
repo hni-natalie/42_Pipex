@@ -6,14 +6,15 @@
 /*   By: hni-xuan <hni-xuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:39:10 by hni-xuan          #+#    #+#             */
-/*   Updated: 2024/06/11 14:39:12 by hni-xuan         ###   ########.fr       */
+/*   Updated: 2024/11/25 10:09:42 by hni-xuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief function that write a string on a specified file descriptor and follow by a newline
+ * @brief function that write a string on a 
+ 	specified file descriptor and follow by a newline
  * 
  * @param *s string to write 
  * @param fd file descriptor on which to write

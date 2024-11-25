@@ -6,14 +6,15 @@
 /*   By: hni-xuan <hni-xuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 11:19:11 by hni-xuan          #+#    #+#             */
-/*   Updated: 2024/06/07 11:19:14 by hni-xuan         ###   ########.fr       */
+/*   Updated: 2024/11/25 10:04:35 by hni-xuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief function copies up  to dstsize -1 characters from the string src to dst,
+ * @brief function copies up  to dstsize -1 characters 
+    from the string src to dst,
  * NUL - terminating the result if dstsize is not 0
  * 
  * @param dst - the location to copy the words 
@@ -35,7 +36,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		i++;
 	}
 	dst[i] = '\0';
-	// must add NULL 
 	return (ft_strlen(src));
 }
 

@@ -6,7 +6,7 @@
 #    By: hni-xuan <hni-xuan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/28 15:25:02 by hni-xuan          #+#    #+#              #
-#    Updated: 2024/08/28 15:25:22 by hni-xuan         ###   ########.fr        #
+#    Updated: 2024/11/25 11:56:25 by hni-xuan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,15 @@ RM = rm -f
 NAME = pipex
 
 SRC_DIR = src
+BONUS_SRC_DIR = bonus
 
 SRCS_FILES = pipex.c utils.c 
+BONUS_SRC_FILES = pipex_bonus.c pipex_utils_bonus.c
 
 SRCS = $(addprefix $(SRC_DIR)/, $(SRCS_FILES))
+BONUS_SRC = $(addprefix $(BONUS_SRC_DIR)/, $(BONUS_SRC_FILES))
 OBJS = $(SRCS:.c=.o)
+BONUS_OBJS = $(BONUS_OBJS:.c=.o)
 
 LIBFT_PATH = ./Libft
 
@@ -41,9 +45,12 @@ $(NAME): $(OBJS) $(LIBFT)
 $(LIBFT):
 	make -C $(LIBFT_PATH) all
 
+bonus: $(BONUS_OBJS) $(LIBFT) 
+	$(CC) $(CFLAGS) $(BONUS_OBJS) $(LIBFT) -o $(NAME)
+
 # Removes objects
 clean: 
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(BONUS_OBJS)
 	make -C $(LIBFT_PATH) clean
 
 # Removes objects and excutables 
@@ -53,3 +60,4 @@ fclean: clean
 
 # Removes objects and excutables and remkaes
 re: fclean all 
+

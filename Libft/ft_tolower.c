@@ -6,14 +6,15 @@
 /*   By: hni-xuan <hni-xuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 13:00:06 by hni-xuan          #+#    #+#             */
-/*   Updated: 2024/06/07 13:00:09 by hni-xuan         ###   ########.fr       */
+/*   Updated: 2024/11/25 10:03:31 by hni-xuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief function converts a upper-case letter to corresponding lower-case letter
+ * @brief function converts a upper-case letter to 
+ 	corresponding lower-case letter
  * 
  * @param c representable as an unsigned char or the value of EOF
  * 

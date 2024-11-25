@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   pipex.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hni-xuan <hni-xuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:33:36 by hni-xuan          #+#    #+#             */
-/*   Updated: 2024/08/28 15:34:00 by hni-xuan         ###   ########.fr       */
+/*   Updated: 2024/11/25 10:26:58 by hni-xuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-int main(int argc, char **argv, char **env)
+int	main(int argc, char **argv, char **env)
 {
 	int		fd[2];
 	pid_t	pid;
@@ -66,7 +66,7 @@ void	parent(int *fd, char **argv, char **env)
 	}
 	dup2(self_fd, 1);
 	dup2(fd[0], 0);
-	close(fd[1]);	
+	close(fd[1]);
 	exec(argv[3], env);
 }
 
@@ -88,8 +88,10 @@ The parent reads from the pipe using the read end
 Hence, the parent does not need the write end, so it can be safely closed
 1. Open the file in write only mode
 2. If the file is not found, then exit
-3. Redirect stdout to the opened file (to ensure that any output produces get written to the file)
-4. Redirect stdin to the read end of the pipe （to ensure that the parent process can receive input from the child process)
+3. Redirect stdout to the opened file
+(to ensure that any output produces get written to the file)
+4. Redirect stdin to the read end of the pipe 
+(to ensure that the parent process can receive input from the child process)
 5. Close the write end of the pipe
 6. Execute the second command 
 */

@@ -6,7 +6,7 @@
 /*   By: hni-xuan <hni-xuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 17:51:26 by hni-xuan          #+#    #+#             */
-/*   Updated: 2024/06/03 18:05:05 by hni-xuan         ###   ########.fr       */
+/*   Updated: 2024/11/25 10:10:19 by hni-xuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char		*d;
 	const unsigned char	*s;
 
-	// error handling 
 	if (!dest && !src)
 		return (dest);
 	d = dest;

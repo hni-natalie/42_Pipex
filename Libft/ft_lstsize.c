@@ -6,7 +6,7 @@
 /*   By: hni-xuan <hni-xuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 17:26:35 by hni-xuan          #+#    #+#             */
-/*   Updated: 2024/06/12 17:27:00 by hni-xuan         ###   ########.fr       */
+/*   Updated: 2024/11/25 10:10:59 by hni-xuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	ft_lstsize(t_list *lst)
 	return (count);
 }
 
-int main(void)
+/* int main(void)
 {
 	t_list	*lst = NULL;
 	int size = ft_lstsize(lst);
@@ -55,4 +55,4 @@ int main(void)
 	ft_lstadd_front(&head, lst1);
 	int	size1 = ft_lstsize(head);
 	printf("%d", size1);
-}
+} */

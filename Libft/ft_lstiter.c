@@ -6,7 +6,7 @@
 /*   By: hni-xuan <hni-xuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 15:16:16 by hni-xuan          #+#    #+#             */
-/*   Updated: 2024/06/19 15:17:47 by hni-xuan         ###   ########.fr       */
+/*   Updated: 2024/11/25 10:13:40 by hni-xuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	}
 }
 
-void	increment(void *content)
+/* void	increment(void *content)
 {
 	int	*int_content = (int *)content;
 	*int_content = *int_content * 2;
-}
+} */
 
 /* int main(void)
 {

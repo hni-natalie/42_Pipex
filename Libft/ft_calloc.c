@@ -6,7 +6,7 @@
 /*   By: hni-xuan <hni-xuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 13:02:19 by hni-xuan          #+#    #+#             */
-/*   Updated: 2024/06/08 13:02:21 by hni-xuan         ###   ########.fr       */
+/*   Updated: 2024/11/25 10:03:02 by hni-xuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	*ft_calloc(size_t count, size_t size)
 
 	if (count == 0 || size == 0)
 		return (malloc(0));
-	// needed to avoid integer overflow
 	if (count > UINT_MAX / size)
 		return (NULL);
 	ptr = malloc(count * size);

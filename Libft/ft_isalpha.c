@@ -6,7 +6,7 @@
 /*   By: hni-xuan <hni-xuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 12:06:05 by hni-xuan          #+#    #+#             */
-/*   Updated: 2024/06/03 14:17:00 by hni-xuan         ###   ########.fr       */
+/*   Updated: 2024/11/25 10:14:47 by hni-xuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_isalpha(int str)
 		return (0);
 }
 
-int main(void)
+/* int main(void)
 {
 	char	str1 = 'H';
 	char	str2 = '1';
@@ -58,4 +58,4 @@ int main(void)
 	int result4 = ft_isalpha(str4);
     printf("%d\n", result4);
 	printf("%d\n", isalpha(str4));
-}
+} */

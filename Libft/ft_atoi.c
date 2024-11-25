@@ -6,7 +6,7 @@
 /*   By: hni-xuan <hni-xuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 10:16:48 by hni-xuan          #+#    #+#             */
-/*   Updated: 2024/06/08 10:16:50 by hni-xuan         ###   ########.fr       */
+/*   Updated: 2024/11/25 10:01:52 by hni-xuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 Concept of writing ft_atoi
 1. Skip the whitespace
 2. If there is a + sign and followed by number behind it, then continue 
-3. If there is a - sign and followed by number behind it, then add negative and continue
+3. If there is a - sign and followed by number behind it,
+	then add negative and continue
 4. If is it a number, then apply the formula below
    sum = sum * 10 + (str - '0')
 5. return sum * neg

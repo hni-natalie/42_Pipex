@@ -6,7 +6,7 @@
 /*   By: hni-xuan <hni-xuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 15:32:18 by hni-xuan          #+#    #+#             */
-/*   Updated: 2024/06/19 15:33:12 by hni-xuan         ###   ########.fr       */
+/*   Updated: 2024/11/25 10:12:22 by hni-xuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ Concept:
 */
 
 /**
- * @brief function that creates a new list resulting from the application of f to each element
+ * @brief function that creates a new list resulting 
+  from the application of f to each element
  * 
  * @param *lst pointer address to one element
  * @param f the address of the function to apply
@@ -53,8 +54,23 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (new_list);
 }
+/* int main(void)
+{
+	t_list	*lst = NULL;
+	int size = ft_lstsize(lst);
+	printf("%d\n", size);
 
-void	*duplicate_content(void *content)
+	t_list	*head = NULL;
+	t_list	*lst1 = ft_lstnew("Hello");
+	t_list	*lst2 = ft_lstnew("My name is ");
+	t_list	*lst3 = ft_lstnew("Natalie");
+	ft_lstadd_front(&head, lst3);
+	ft_lstadd_front(&head, lst2);
+	ft_lstadd_front(&head, lst1);
+	int	size1 = ft_lstsize(head);
+	printf("%d", size1);
+} */
+/* void	*duplicate_content(void *content)
 {
 	char	*new_content = strdup((char *)content);
 	return (new_content);
@@ -63,7 +79,7 @@ void	*duplicate_content(void *content)
 void	del(void *content)
 {
 	free(content); // strdup allocate memory that must be freed
-}
+} */
 
 /* int main(void)
 {

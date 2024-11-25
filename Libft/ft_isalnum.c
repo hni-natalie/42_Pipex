@@ -6,7 +6,7 @@
 /*   By: hni-xuan <hni-xuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 14:24:16 by hni-xuan          #+#    #+#             */
-/*   Updated: 2024/06/03 15:07:51 by hni-xuan         ###   ########.fr       */
+/*   Updated: 2024/11/25 10:15:01 by hni-xuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 */
 
 /**
- * @brief function check the specific letter whether is it alphabet and digit number
+ * @brief function check the specific letter 
+ 	whether is it alphabet and digit number
  * @param str(int) 
  *  
  * @return 1 if it is letter

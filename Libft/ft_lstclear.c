@@ -6,14 +6,15 @@
 /*   By: hni-xuan <hni-xuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:47:24 by hni-xuan          #+#    #+#             */
-/*   Updated: 2024/06/19 14:48:40 by hni-xuan         ###   ########.fr       */
+/*   Updated: 2024/11/25 10:14:02 by hni-xuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief function that removes the element passes as parameter and all the following elements
+ * @brief function that removes the element passes 
+ 	as parameter and all the following elements
  * 
  * @param **lst pointer address to one element 
  * @param del address of the function that can delete the element's content
@@ -31,10 +32,10 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	*lst = NULL;
 }
 
-void	del(void *content)
+/* void	del(void *content)
 {
 	(void)content; // No action needed for string literals
-}
+} */
 
 /* int main(void)
 {
