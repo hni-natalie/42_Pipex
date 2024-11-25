@@ -11,40 +11,45 @@
 # **************************************************************************** #
 
 # Compiler and flags 
-CC = CC
-CFLAGS = -Wall - Werror -Wextra
-RM = rm -fclean
+CC = cc
+CFLAGS = -Wall -Werror -Wextra 
+RM = rm -f
 
 # Output file name 
-NAME = pipex.a
+NAME = pipex
 
-SRCDIR = src/
-OBJDIR = bin/
-INCDIR = -Iinclude
+SRC_DIR = src
 
-SRCS_FILES = 
+SRCS_FILES = pipex.c utils.c 
 
-SRCS = $(addprefix $(SRCDIR), $(addsuffix .c, $(SRCS_FILES)))
-OBJS = $(addprefix $(OBJDIR), $(addsuffix .o, $(SRCS_FILES)))
+SRCS = $(addprefix $(SRC_DIR)/, $(SRCS_FILES))
+OBJS = $(SRCS:.c=.o)
+
+LIBFT_PATH = ./Libft
+
+LIBFT = $(LIBFT_PATH)/libft.a
 
 all: $(NAME)
 
-# Generates output file
-$(NAME): $(OBJS)
-	ar rcs $@ $^
+$(SRC_DIR)%.o: $(SRC_DIR)%.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
-# Compiles sources into objects
-$(OBJDIR)%.o : $(SRCDIR)%.c
-	@mkdir -p $(OBJDIR)
-	$(CC) $(CFLAGS) $(INCDIR) -c $< -o $@
+# Generates output file
+$(NAME): $(OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+
+$(LIBFT):
+	make -C $(LIBFT_PATH) all
 
 # Removes objects
 clean: 
 	$(RM) $(OBJS)
+	make -C $(LIBFT_PATH) clean
 
 # Removes objects and excutables 
 fclean: clean
 	$(RM) $(NAME)
+	make -C $(LIBFT_PATH) fclean
 
 # Removes objects and excutables and remkaes
 re: fclean all 
