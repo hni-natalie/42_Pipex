@@ -6,24 +6,26 @@
 /*   By: hni-xuan <hni-xuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 10:27:55 by hni-xuan          #+#    #+#             */
-/*   Updated: 2024/11/25 17:04:48 by hni-xuan         ###   ########.fr       */
+/*   Updated: 2024/11/26 13:29:43 by hni-xuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "pipex_bonus.h"
 
 int	main(int argc, char **argv, char **env)
 {
 	int	i;
 	int	infile_fd;
 	int	outfile_fd;
-	
+
 	if (argc < 5)
 		error("Number of arguments less than 5.");
-	if (ft_strncmp(argv[1], "here_doc", 8) == 0 && argc >= 6)
+	if (ft_strncmp(argv[1], "here_doc", 8) == 0)
 	{
+		if (argc < 6)
+			error("Number of arguments less than 6");
 		i = 3;
-		outfile_fd = open_file(argv[argc - i], 2);
+		outfile_fd = open_file(argv[argc - 1], 2);
 		here_doc(argv[2]);
 	}
 	else
@@ -43,55 +45,38 @@ void	here_doc(char *limiter)
 {
 	pid_t	pid;
 	int		fd[2];
-	char	*line;
 
-	if (argc < 6)
-		error("Number of arguments less than 6");
-	if (pipe(fd) == -1);
+	if (pipe(fd) == -1)
 		error("pipe");
 	pid = fork();
+	if (pid == -1)
+		error("fork");
 	if (pid == 0)
-	{
-		close(fd[0]);
-		while (get_next_line(&line))
-		{
-			if (ft_strncmp(line, limiter, ft_strlen(limiter)) == 0)
-				exit(0);
-			write(fd[1], line, ft_strlen(limiter));
-		}
-	}
+		here_doc_input(fd, limiter);
 	else
 	{
 		close(fd[1]);
 		dup2(fd[0], 0);
-		waitpid(pid, NULL, 0);
+		wait(NULL);
 	}
 }
 
-int	get_next_line(char **line)
+void	here_doc_input(int *fd, char *limiter)
 {
-	char	**buffer;
-	int		i;
-	int		r;
-	char	c;
+	char	*line;
 
-	i = 0;
-	buffer = (char *)malloc(100000);
-	if (!buffer)
-		return (-1);
-	r = read(0, &c, 1);
-	while (r && c != '\n' && c != '\0')
+	close(fd[0]);
+	while (1)
 	{
-		if (c != '\n' && c != '\0')
-			buffer[i] = c;
-		i++;
-		r = read(0, &c, 1);
+		line = get_next_line(0);
+		if (ft_strncmp(line, limiter, ft_strlen(limiter)) == 0)
+		{
+			free(line);
+			exit(0);
+		}
+		ft_putstr_fd(line, fd[1]);
+		free(line);
 	}
-	buffer[i] = '\n';
-	buffer[++i] = '\0';
-	*line = buffer;
-	free(buffer);
-	return (r);
 }
 
 void	exec_pipe(char *cmd, char **env)
@@ -102,11 +87,11 @@ void	exec_pipe(char *cmd, char **env)
 	if (pipe(fd) == -1)
 		error("pipe error");
 	pid = fork();
-	if (pid == -1);
+	if (pid == -1)
 		error("fork");
 	if (pid == 0)
 	{
-		close(fd[0]); 
+		close(fd[0]);
 		dup2(fd[1], 1);
 		exec(cmd, env);
 	}

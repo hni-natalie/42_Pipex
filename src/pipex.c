@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hni-xuan <hni-xuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/28 15:33:36 by hni-xuan          #+#    #+#             */
-/*   Updated: 2024/11/25 10:26:58 by hni-xuan         ###   ########.fr       */
+/*   Created: 2024/11/25 09:17:38 by hni-xuan          #+#    #+#             */
+/*   Updated: 2024/11/26 13:27:07 by hni-xuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,23 @@ int	main(int argc, char **argv, char **env)
 	if (argc != 5)
 	{
 		ft_putendl_fd("Error: wrong number of arguments", 2);
-		exit(0);
+		exit(1);
 	}
 	if (pipe(fd) == -1)
 	{
 		ft_putendl_fd("Error: pipe failed", 2);
-		exit(0);
+		exit(1);
 	}
 	pid = fork();
 	if (pid == -1)
 	{
 		ft_putendl_fd("Error: fork failed", 2);
-		exit(0);
+		exit(1);
 	}
 	if (pid == 0)
 		child(fd, argv, env);
 	parent(fd, argv, env);
+	wait(NULL);
 }
 
 void	child(int *fd, char **argv, char **env)
@@ -46,11 +47,11 @@ void	child(int *fd, char **argv, char **env)
 	if (self_fd == -1)
 	{
 		ft_putendl_fd("Error: file not found", 2);
-		exit(0);
+		exit(1);
 	}
+	close(fd[0]);
 	dup2(self_fd, 0);
 	dup2(fd[1], 1);
-	close(fd[0]);
 	exec(argv[2], env);
 }
 
@@ -58,15 +59,15 @@ void	parent(int *fd, char **argv, char **env)
 {
 	int	self_fd;
 
-	self_fd = open(argv[4], O_WRONLY | O_CREAT | O_TRUNC, 0644);
+	self_fd = open(argv[4], O_WRONLY | O_CREAT | O_TRUNC, 0777);
 	if (self_fd == -1)
 	{
 		ft_putendl_fd("Error: file not found", 2);
-		exit(0);
+		exit(1);
 	}
+	close(fd[1]);
 	dup2(self_fd, 1);
 	dup2(fd[0], 0);
-	close(fd[1]);
 	exec(argv[3], env);
 }
 
@@ -88,7 +89,7 @@ The parent reads from the pipe using the read end
 Hence, the parent does not need the write end, so it can be safely closed
 1. Open the file in write only mode
 2. If the file is not found, then exit
-3. Redirect stdout to the opened file
+3. Redirect stdout to the opened file 
 (to ensure that any output produces get written to the file)
 4. Redirect stdin to the read end of the pipe 
 (to ensure that the parent process can receive input from the child process)
