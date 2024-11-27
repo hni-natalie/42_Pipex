@@ -6,7 +6,7 @@
 #    By: hni-xuan <hni-xuan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/28 15:25:02 by hni-xuan          #+#    #+#              #
-#    Updated: 2024/11/26 08:45:43 by hni-xuan         ###   ########.fr        #
+#    Updated: 2024/11/27 09:19:54 by hni-xuan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ BONUS_SRC = $(addprefix $(BONUS_SRC_DIR)/, $(BONUS_SRC_FILES))
 OBJS = $(SRCS:.c=.o)
 BONUS_OBJS = $(BONUS_SRC:.c=.o)
 
-LIBFT_PATH = ./Libft
+LIBFT_PATH = ./libft
 
 LIBFT = $(LIBFT_PATH)/libft.a
 

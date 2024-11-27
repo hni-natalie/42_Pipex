@@ -6,15 +6,14 @@
 /*   By: hni-xuan <hni-xuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:33:36 by hni-xuan          #+#    #+#             */
-/*   Updated: 2024/11/26 11:32:12 by hni-xuan         ###   ########.fr       */
+/*   Updated: 2024/11/27 09:21:06 by hni-xuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PIPEX_H
 # define PIPEX_H
 
-# include "../Libft/libft.h"
-# include "../Libft/get_next_line/get_next_line.h"
+# include "../libft/libft.h"
 # include <stdio.h>
 # include <string.h>
 # include <unistd.h>
